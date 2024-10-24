@@ -9,6 +9,10 @@ if (import.meta.main) {
   const denoFile = Deno.readTextFileSync("../deno.json");
   const denoJSON = JSON.parse(denoFile);
   console.log(denoJSON);
+  // get the merge commit message from the payload.commits
+  const filterCommitToMerge = context.payload.commits.filter((commit: any) => commit.message.includes("Merge pull request"));
+  const commitMerge = filterCommitToMerge[0];
+  console.log("Commit Merge: ", commitMerge);
   const repoName = context.payload.repository?.name;
   const fullname = context.payload.repository?.full_name;
   const description = context.payload.repository?.description;
