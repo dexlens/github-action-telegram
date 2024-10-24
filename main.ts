@@ -24,7 +24,4 @@ if (import.meta.main) {
     },
   });
   console.log("Message sent");
-  // console.log("Deno args:", Deno.args);
-  // deno run --allow-all main.ts ${{ secrets.TELEGRAM_TOKEN }}
-  // bot.stop();
 }
