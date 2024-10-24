@@ -1,1 +1,1 @@
-# github-action-telegram
+# first-deno-action
