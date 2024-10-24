@@ -21,12 +21,13 @@ if (import.meta.main) {
   const applicationVersion = denoJSON.version;
   const telegramChannel = Deno.args[1];
 
-  // bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=New Release - ${applicationVersion}&md=1&showWatermark=0&fontSize=150px&images=code`, {
-  //   reply_markup: {
-  //     inline_keyboard: [
-  //       [{ text: "View on GitHub", url: htmlURL as string }],
-  //     ],
-  //   },
-  // });
+  bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=New Release - ${applicationVersion}&md=1&showWatermark=0&fontSize=150px&images=code`, {
+    caption: commitMerge.message,
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: "View on GitHub", url: htmlURL as string }],
+      ],
+    },
+  });
   console.log("Message sent");
 }
