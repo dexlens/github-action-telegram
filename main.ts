@@ -20,7 +20,7 @@ if (import.meta.main) {
   const htmlURL = context.payload.repository?.html_url;
   const applicationVersion = denoJSON.version;
   const telegramChannel = Deno.args[1];
-  const pr1 = commitMerge.message.split(" ")[3].replace("#", "");
+  const prNumber = commitMerge.message.split(" ")[3].replace("#", "");
   let repoLink = htmlURL;
   let prLink = `${repoLink}/pull/${prNumber}`;
 
