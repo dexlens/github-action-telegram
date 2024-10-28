@@ -32,7 +32,7 @@ if (import.meta.main) {
           { text: "View Repo", url: htmlURL as string },
         ],
         [
-          { text: "View PR", url: prLink as string },
+          { text: "View Pull Request", url: prLink as string },
         ],
       ],
     },
