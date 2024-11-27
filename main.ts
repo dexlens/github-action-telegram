@@ -53,7 +53,17 @@ if (import.meta.main) {
     "https://github.com/dexlens/cdn/raw/refs/heads/main/stare-awkward.mp4",
     "https://github.com/dexlens/cdn/raw/refs/heads/main/cristiano-ronaldo-portugal.mp4",
     "https://github.com/dexlens/cdn/raw/refs/heads/main/shia-la-beouf-fire.mp4",
-    "https://github.com/dexlens/cdn/raw/refs/heads/main/peaky-blinders-no-fighting.mp4"
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/peaky-blinders-no-fighting.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/xd-programming.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/cat-computer.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/im-tired-developer-cat-gif.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/god-coding.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/programming.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/developer-client.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/front.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/bugs-video-games.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/rugged-crypto-rugged.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/weekend-bugs.mp4"
   ]
 
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
