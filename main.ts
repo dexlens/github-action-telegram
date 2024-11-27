@@ -85,6 +85,7 @@ if (import.meta.main) {
         ],
       ],
     },
+    parse_mode: "MarkdownV2",
   });
   console.log("Message sent");
 }
