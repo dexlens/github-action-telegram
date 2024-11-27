@@ -49,7 +49,11 @@ if (import.meta.main) {
     "https://github.com/dexlens/cdn/raw/refs/heads/main/gordon.mp4",
     "https://github.com/dexlens/cdn/raw/refs/heads/main/drops-mic.mp4",
     "https://github.com/dexlens/cdn/raw/refs/heads/main/shaggy-scooby-doo.mp4",
-    "https://github.com/dexlens/cdn/raw/refs/heads/main/noice-nice.mp4"
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/noice-nice.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/stare-awkward.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/cristiano-ronaldo-portugal.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/shia-la-beouf-fire.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/peaky-blinders-no-fighting.mp4"
   ]
 
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
