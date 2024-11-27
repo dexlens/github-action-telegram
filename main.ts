@@ -41,7 +41,7 @@ if (import.meta.main) {
   const videoUrls = [
     "https://github.com/dexlens/cdn/raw/refs/heads/main/1564743423408.mp4", 
     "https://github.com/dexlens/cdn/raw/refs/heads/main/legend.mp4",
-    "https://github.com/dexlens/cdn/raw/refs/heads/main/lepers-julien.mp4"
+    // "https://github.com/dexlens/cdn/raw/refs/heads/main/lepers-julien.mp4"
   ]
 
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
