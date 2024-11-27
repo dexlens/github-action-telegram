@@ -24,6 +24,11 @@ if (import.meta.main) {
   let repoLink = htmlURL;
   let prLink = `${repoLink}/pull/${prNumber}`;
 
+  let caption = `${commitMerge.message}
+
+*Version:* ${applicationVersion}
+*Repo:* ${repoName}`;
+
   // bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=&md=1&showWatermark=0&fontSize=150px&images=code`, {
   //   caption: commitMerge.message,
   //   reply_markup: {
@@ -69,7 +74,7 @@ if (import.meta.main) {
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
 
   bot.api.sendVideo(telegramChannel, randomVideoUrl, {
-    caption: commitMerge.message,
+    caption: caption,
     reply_markup: {
       inline_keyboard: [
         [
