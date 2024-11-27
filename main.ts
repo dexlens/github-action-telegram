@@ -41,7 +41,15 @@ if (import.meta.main) {
   const videoUrls = [
     "https://github.com/dexlens/cdn/raw/refs/heads/main/1564743423408.mp4", 
     "https://github.com/dexlens/cdn/raw/refs/heads/main/legend.mp4",
-    "https://github.com/dexlens/cdn/raw/refs/heads/main/fafo-findout.mp4"
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/fafo-findout.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/50cent-laughing.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/nahh-nah.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/thumbs-thumbs-up-kid.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/good-morning.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/gordon.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/drops-mic.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/shaggy-scooby-doo.mp4",
+    "https://github.com/dexlens/cdn/raw/refs/heads/main/noice-nice.mp4"
   ]
 
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
