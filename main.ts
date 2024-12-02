@@ -21,9 +21,12 @@ if (import.meta.main) {
   const applicationVersion = denoJSON.version;
   const telegramChannel = Deno.args[1];
   const prNumber = commitMerge.message.split(" ")[3].replace("#", "");
-  const branchName = context.ref.split("/")[2];
+  // const branchName = context.ref.split("/")[2];
   let repoLink = htmlURL;
   let prLink = `${repoLink}/pull/${prNumber}`;
+
+  // Merge pull request #3 from dexlens/testProjectImage
+  let branchName = testString.split("/").pop();
 
   let htmlCaption = `${commitMerge.message}
 
@@ -92,7 +95,7 @@ if (import.meta.main) {
       parse_mode: "HTML",
     });
   } else {
-    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/bitcoin-layer2/BEVM/BEVM.png`, {
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
       caption: htmlCaption,
       reply_markup: {
         inline_keyboard: [
