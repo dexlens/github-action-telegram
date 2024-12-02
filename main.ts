@@ -95,10 +95,10 @@ if (import.meta.main) {
       parse_mode: "HTML",
     });
   } else {
-    let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
-    let projectData = JSON.parse(entryProjectData);
+    // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
+    // let projectData = JSON.parse(entryProjectData);
     console.log(`I am grabbing this image: https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`);
-    console.log("Project Data: ", projectData);
+    // console.log("Project Data: ", projectData);
 
     // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
     //   caption: htmlCaption,
