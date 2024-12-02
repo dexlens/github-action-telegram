@@ -95,7 +95,7 @@ if (import.meta.main) {
       parse_mode: "HTML",
     });
   } else {
-    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/BEVM/BEVM.png`, {
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
       caption: htmlCaption,
       reply_markup: {
         inline_keyboard: [
