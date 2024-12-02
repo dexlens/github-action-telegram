@@ -25,6 +25,8 @@ if (import.meta.main) {
   let repoLink = htmlURL;
   let prLink = `${repoLink}/pull/${prNumber}`;
 
+  console.log("Payload: ", context.payload);
+
   // Merge pull request #3 from dexlens/testProjectImage
   let branchName = commitMerge.message.split("/").pop();
   console.log("Branch Name: ", branchName);
@@ -32,8 +34,7 @@ if (import.meta.main) {
   let htmlCaption = `${commitMerge.message}
 
 <b>Version:</b> ${applicationVersion}
-<b>Repo:</b> ${repoName}
-<b>Branch:</b> ${branchName}`;
+<b>Repo:</b> ${repoName};
 
   // bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=&md=1&showWatermark=0&fontSize=150px&images=code`, {
   //   caption: commitMerge.message,
@@ -80,58 +81,58 @@ if (import.meta.main) {
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
 
   // if repo name is not dehub 
-  // if (repoName !== "dehub") {
-  //   bot.api.sendVideo(telegramChannel, randomVideoUrl, {
-  //     caption: htmlCaption,
-  //     reply_markup: {
-  //       inline_keyboard: [
-  //         [
-  //           { text: "View Repo", url: htmlURL as string },
-  //         ],
-  //         [
-  //           { text: "View Pull Request", url: prLink as string },
-  //         ],
+  if (repoName !== "dehub") {
+    bot.api.sendVideo(telegramChannel, randomVideoUrl, {
+      caption: htmlCaption,
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: "View Repo", url: htmlURL as string },
+          ],
+          [
+            { text: "View Pull Request", url: prLink as string },
+          ],
+        ],
+      },
+      parse_mode: "HTML",
+    });
+  } else {
+    // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
+    // let projectData = JSON.parse(entryProjectData);
+    // let imageSrc = `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png - wtf`;
+    // console.log("Image Src: ", imageSrc);
+    // console.log("Project Data: ", projectData);
+
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/BEVM/BEVM.png`, {
+      caption: htmlCaption,
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: "View Repo", url: htmlURL as string },
+          ],
+          [
+            { text: "View Pull Request", url: prLink as string },
+          ],
+        ],
+      },
+      parse_mode: "HTML",
+    });
+  }
+
+  // bot.api.sendVideo(telegramChannel, randomVideoUrl, {
+  //   caption: htmlCaption,
+  //   reply_markup: {
+  //     inline_keyboard: [
+  //       [
+  //         { text: "View Repo", url: htmlURL as string },
   //       ],
-  //     },
-  //     parse_mode: "HTML",
-  //   });
-  // } else {
-  //   // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
-  //   // let projectData = JSON.parse(entryProjectData);
-  //   // let imageSrc = `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png - wtf`;
-  //   // console.log("Image Src: ", imageSrc);
-  //   // console.log("Project Data: ", projectData);
-
-  //   // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
-  //   //   caption: htmlCaption,
-  //   //   reply_markup: {
-  //   //     inline_keyboard: [
-  //   //       [
-  //   //         { text: "View Repo", url: htmlURL as string },
-  //   //       ],
-  //   //       [
-  //   //         { text: "View Pull Request", url: prLink as string },
-  //   //       ],
-  //   //     ],
-  //   //   },
-  //   //   parse_mode: "HTML",
-  //   // });
-  // }
-
-  bot.api.sendVideo(telegramChannel, randomVideoUrl, {
-    caption: htmlCaption,
-    reply_markup: {
-      inline_keyboard: [
-        [
-          { text: "View Repo", url: htmlURL as string },
-        ],
-        [
-          { text: "View Pull Request", url: prLink as string },
-        ],
-      ],
-    },
-    parse_mode: "HTML",
-  });
+  //       [
+  //         { text: "View Pull Request", url: prLink as string },
+  //       ],
+  //     ],
+  //   },
+  //   parse_mode: "HTML",
+  // });
 
   console.log("Message sent");
 }
