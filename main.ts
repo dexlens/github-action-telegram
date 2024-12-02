@@ -98,6 +98,11 @@ if (import.meta.main) {
       reply_markup: {
         inline_keyboard: [
           [
+            {
+              text: "View Page", url: `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/`
+            }
+          ],
+          [
             { text: "View Repo", url: htmlURL as string },
           ],
           [
