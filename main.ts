@@ -27,6 +27,7 @@ if (import.meta.main) {
 
   // Merge pull request #3 from dexlens/testProjectImage
   let branchName = commitMerge.message.split("/").pop();
+  console.log("Branch Name: ", branchName);
 
   let htmlCaption = `${commitMerge.message}
 
