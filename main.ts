@@ -99,7 +99,7 @@ if (import.meta.main) {
         inline_keyboard: [
           [
             {
-              text: "View Page", url: `https://github.com/dexlens/dehub/${branchName}/`
+              text: "View Page", url: `https://github.com/dexlens/dehub/tree/main/${branchName}`
             }
           ],
           [
