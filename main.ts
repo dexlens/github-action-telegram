@@ -28,7 +28,10 @@ if (import.meta.main) {
   console.log("Payload: ", context.payload);
 
   // Merge pull request #3 from dexlens/testProjectImage
-  let branchName = commitMerge.message.split("/").pop();
+  // let branchName = commitMerge.message.split("/").pop();
+  // console.log("Branch Name: ", branchName);
+
+  let branchName = commitMerge.message.match(/from dexlens\/(.*?)\n\n/)[1];
   console.log("Branch Name: ", branchName);
 
   let htmlCaption = `${commitMerge.message}
@@ -90,7 +93,7 @@ if (import.meta.main) {
     // console.log("Image Src: ", imageSrc);
     // console.log("Project Data: ", projectData);
 
-    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/BEVM/BEVM.png`, {
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
       caption: htmlCaption,
       reply_markup: {
         inline_keyboard: [
