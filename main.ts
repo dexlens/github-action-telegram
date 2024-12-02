@@ -34,21 +34,8 @@ if (import.meta.main) {
   let htmlCaption = `${commitMerge.message}
 
 <b>Version:</b> ${applicationVersion}
-<b>Repo:</b> ${repoName};
+<b>Repo:</b> ${repoName}`;
 
-  // bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=&md=1&showWatermark=0&fontSize=150px&images=code`, {
-  //   caption: commitMerge.message,
-  //   reply_markup: {
-  //     inline_keyboard: [
-  //       [
-  //         { text: "View Repo", url: htmlURL as string },
-  //       ],
-  //       [
-  //         { text: "View Pull Request", url: prLink as string },
-  //       ],
-  //     ],
-  //   },
-  // });
 
   const videoUrls = [
     "https://github.com/dexlens/cdn/raw/refs/heads/main/1564743423408.mp4", 
