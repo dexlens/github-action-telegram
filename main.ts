@@ -34,10 +34,7 @@ if (import.meta.main) {
   let branchName = commitMerge.message.match(/from dexlens\/(.*?)\n\n/)[1];
   console.log("Branch Name: ", branchName);
 
-  let htmlCaption = `${commitMerge.message}
-
-<b>Version:</b> ${applicationVersion}
-<b>Repo:</b> ${repoName}`;
+  let htmlCaption = `${commitMerge.message}`;
 
 
   const videoUrls = [
