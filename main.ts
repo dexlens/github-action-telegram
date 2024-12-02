@@ -97,7 +97,8 @@ if (import.meta.main) {
   } else {
     // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
     // let projectData = JSON.parse(entryProjectData);
-    console.log(`I am grabbing this image: https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`);
+    let imageSrc = `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png - wtf`;
+    console.log("Image Src: ", imageSrc);
     // console.log("Project Data: ", projectData);
 
     // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
