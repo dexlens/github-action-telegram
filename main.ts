@@ -26,7 +26,7 @@ if (import.meta.main) {
   let prLink = `${repoLink}/pull/${prNumber}`;
 
   // Merge pull request #3 from dexlens/testProjectImage
-  let branchName = testString.split("/").pop();
+  let branchName = commitMerge.message.split("/").pop();
 
   let htmlCaption = `${commitMerge.message}
 
