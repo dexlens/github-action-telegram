@@ -21,13 +21,15 @@ if (import.meta.main) {
   const applicationVersion = denoJSON.version;
   const telegramChannel = Deno.args[1];
   const prNumber = commitMerge.message.split(" ")[3].replace("#", "");
+  const branchName = context.ref.split("/")[2];
   let repoLink = htmlURL;
   let prLink = `${repoLink}/pull/${prNumber}`;
 
   let htmlCaption = `${commitMerge.message}
 
 <b>Version:</b> ${applicationVersion}
-<b>Repo:</b> ${repoName}`;
+<b>Repo:</b> ${repoName}
+<b>Branch:</b> ${branchName}`;
 
   // bot.api.sendPhoto(telegramChannel, `https://banners.beyondco.de/${description}.png?theme=dark&packageManager=npm+install&packageName=@${fullname}&pattern=charlieBrown&style=style_1&description=&md=1&showWatermark=0&fontSize=150px&images=code`, {
   //   caption: commitMerge.message,
@@ -73,19 +75,38 @@ if (import.meta.main) {
 
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
 
-  bot.api.sendVideo(telegramChannel, randomVideoUrl, {
-    caption: htmlCaption,
-    reply_markup: {
-      inline_keyboard: [
-        [
-          { text: "View Repo", url: htmlURL as string },
+  // if repo name is not dehub 
+  if (repoName !== "dehub") {
+    bot.api.sendVideo(telegramChannel, randomVideoUrl, {
+      caption: htmlCaption,
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: "View Repo", url: htmlURL as string },
+          ],
+          [
+            { text: "View Pull Request", url: prLink as string },
+          ],
         ],
-        [
-          { text: "View Pull Request", url: prLink as string },
+      },
+      parse_mode: "HTML",
+    });
+  } else {
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/bitcoin-layer2/BEVM/BEVM.png`, {}, {
+      caption: htmlCaption,
+      reply_markup: {
+        inline_keyboard: [
+          [
+            { text: "View Repo", url: htmlURL as string },
+          ],
+          [
+            { text: "View Pull Request", url: prLink as string },
+          ],
         ],
-      ],
-    },
-    parse_mode: "HTML",
-  });
+      },
+      parse_mode: "HTML",
+    });
+  }
+
   console.log("Message sent");
 }
