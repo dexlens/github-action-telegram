@@ -92,7 +92,7 @@ if (import.meta.main) {
       parse_mode: "HTML",
     });
   } else {
-    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/bitcoin-layer2/BEVM/BEVM.png`, {}, {
+    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/bitcoin-layer2/BEVM/BEVM.png`, {
       caption: htmlCaption,
       reply_markup: {
         inline_keyboard: [
