@@ -100,20 +100,20 @@ if (import.meta.main) {
     console.log(`I am grabbing this image: https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`);
     console.log("Project Data: ", projectData);
 
-    bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
-      caption: htmlCaption,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            { text: "View Repo", url: htmlURL as string },
-          ],
-          [
-            { text: "View Pull Request", url: prLink as string },
-          ],
-        ],
-      },
-      parse_mode: "HTML",
-    });
+    // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
+    //   caption: htmlCaption,
+    //   reply_markup: {
+    //     inline_keyboard: [
+    //       [
+    //         { text: "View Repo", url: htmlURL as string },
+    //       ],
+    //       [
+    //         { text: "View Pull Request", url: prLink as string },
+    //       ],
+    //     ],
+    //   },
+    //   parse_mode: "HTML",
+    // });
   }
 
   console.log("Message sent");
