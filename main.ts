@@ -80,43 +80,58 @@ if (import.meta.main) {
   let randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
 
   // if repo name is not dehub 
-  if (repoName !== "dehub") {
-    bot.api.sendVideo(telegramChannel, randomVideoUrl, {
-      caption: htmlCaption,
-      reply_markup: {
-        inline_keyboard: [
-          [
-            { text: "View Repo", url: htmlURL as string },
-          ],
-          [
-            { text: "View Pull Request", url: prLink as string },
-          ],
-        ],
-      },
-      parse_mode: "HTML",
-    });
-  } else {
-    // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
-    // let projectData = JSON.parse(entryProjectData);
-    let imageSrc = `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png - wtf`;
-    console.log("Image Src: ", imageSrc);
-    // console.log("Project Data: ", projectData);
+  // if (repoName !== "dehub") {
+  //   bot.api.sendVideo(telegramChannel, randomVideoUrl, {
+  //     caption: htmlCaption,
+  //     reply_markup: {
+  //       inline_keyboard: [
+  //         [
+  //           { text: "View Repo", url: htmlURL as string },
+  //         ],
+  //         [
+  //           { text: "View Pull Request", url: prLink as string },
+  //         ],
+  //       ],
+  //     },
+  //     parse_mode: "HTML",
+  //   });
+  // } else {
+  //   // let entryProjectData = Deno.readTextFileSync(`../${branchName}/project.json`);
+  //   // let projectData = JSON.parse(entryProjectData);
+  //   // let imageSrc = `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png - wtf`;
+  //   // console.log("Image Src: ", imageSrc);
+  //   // console.log("Project Data: ", projectData);
 
-    // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
-    //   caption: htmlCaption,
-    //   reply_markup: {
-    //     inline_keyboard: [
-    //       [
-    //         { text: "View Repo", url: htmlURL as string },
-    //       ],
-    //       [
-    //         { text: "View Pull Request", url: prLink as string },
-    //       ],
-    //     ],
-    //   },
-    //   parse_mode: "HTML",
-    // });
-  }
+  //   // bot.api.sendPhoto(telegramChannel, `https://raw.githubusercontent.com/dexlens/dehub/refs/heads/main/${branchName}/${branchName}.png`, {
+  //   //   caption: htmlCaption,
+  //   //   reply_markup: {
+  //   //     inline_keyboard: [
+  //   //       [
+  //   //         { text: "View Repo", url: htmlURL as string },
+  //   //       ],
+  //   //       [
+  //   //         { text: "View Pull Request", url: prLink as string },
+  //   //       ],
+  //   //     ],
+  //   //   },
+  //   //   parse_mode: "HTML",
+  //   // });
+  // }
+
+  bot.api.sendVideo(telegramChannel, randomVideoUrl, {
+    caption: htmlCaption,
+    reply_markup: {
+      inline_keyboard: [
+        [
+          { text: "View Repo", url: htmlURL as string },
+        ],
+        [
+          { text: "View Pull Request", url: prLink as string },
+        ],
+      ],
+    },
+    parse_mode: "HTML",
+  });
 
   console.log("Message sent");
 }
