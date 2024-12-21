@@ -79,6 +79,9 @@ if (import.meta.main) {
           [
             { text: "View Pull Request", url: prLink as string },
           ],
+          [
+            { text: "View Code Changes", url: `${prLink}/files` },
+          ],
         ],
       },
       parse_mode: "HTML",
